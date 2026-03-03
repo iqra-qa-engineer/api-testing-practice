@@ -1,21 +1,69 @@
-# API Testing Practice Repository
+# API Testing Practice – User Module
 
-# Overview
-This repository demonstrates structured API testing practices using Postman and Swagger documentation.
+This repository demonstrates structured API testing for a User Creation endpoint using manual test design and Postman execution.
 
-#Tools Used
+---
+
+## Project Overview
+
+This project simulates real-world API testing workflow:
+
+1. Reviewing Swagger documentation
+2. Identifying required and optional fields
+3. Designing positive, negative, and boundary test cases
+4. Validating response schema and status codes
+5. Testing authentication and conflict scenarios
+6. Performing basic performance validation
+
+---
+
+## Repository Structure
+
+```
+api-testing-practice
+│
+├── postman-collections
+│   └── Exported Postman collections
+│
+├── swagger-notes
+│   └── API schema analysis & observations
+│
+├── test-scenarios
+│   └── Structured API test cases (TC_API_001–TC_API_010)
+│
+└── README.md
+```
+
+---
+
+## Test Coverage Includes
+
+- Positive scenario validation
+- Required field validation
+- Invalid input handling
+- Duplicate data conflict handling
+- Authentication testing
+- Boundary value testing
+- Performance & stability checks
+- Response schema validation
+
+---
+
+## Tools Used
+
 - Postman
 - Swagger UI
-- JSON validation
+- Manual Test Design Techniques
 
-#Testing Focus Areas
-- Status code validation
-- Response body verification
-- Field-level validation
-- Negative testing
-- Edge case handling
-- Input validation scenarios
+---
 
-# Objective
-To showcase practical API testing approach including requirement analysis, test design, validation logic, and structured documentation.#
-Hands-on API testing practice using Postman and Swagger with structured test scenarios and edge case validations.
+## Objective of This Repository
+
+To demonstrate practical API testing skills including:
+- Requirement analysis
+- Structured test case design
+- API validation logic
+- Security validation awareness
+- Basic performance consideration
+
+---
