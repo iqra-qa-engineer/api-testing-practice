@@ -57,3 +57,56 @@ Verify that the API returns a list of users when a valid request is made.
 **Performance Validation:**
 
 - Response time < 2 seconds
+
+---
+
+### TC_API_GET_002 – Retrieve user by valid ID
+
+**Objective:**  
+Verify that the API returns correct user details when a valid user ID is provided.
+
+**Method:** GET  
+**Endpoint:** `/users/{id}`
+
+**Path Parameter Example:**
+
+```
+/users/12345
+```
+
+**Request Headers:**
+
+- Content-Type: application/json
+- Authorization: Bearer <valid_token>
+
+**Expected Status Code:** 200 OK
+
+**Expected Response Body (Example):**
+
+```json
+{
+  "id": "12345",
+  "firstName": "Iqra",
+  "lastName": "Ilyas",
+  "email": "iqra.ilyas@test.com"
+}
+```
+
+**Response Validations:**
+
+- Status code is **200**
+- Response contains `id`
+- Returned `id` matches the requested ID
+- Response includes:
+  - `firstName`
+  - `lastName`
+  - `email`
+- Sensitive fields like `password` are not returned
+
+**Performance Validation:**
+
+- Response time < 2 seconds
+
+**Database Validation (if accessible):**
+
+- User record exists in database for the provided ID
