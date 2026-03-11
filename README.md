@@ -74,7 +74,7 @@ Follow these steps to execute the API tests locally.
 
 1. Open **Postman**
 2. Click **Import**
-3. Select the file:
+3. Select the file: postman-collections/user-api-testing.postman_collection.json
 
 
 
