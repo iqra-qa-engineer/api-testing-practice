@@ -66,4 +66,38 @@ To demonstrate practical API testing skills including:
 - Security validation awareness
 - Basic performance consideration
 
----
+  ## How to Run the Postman Collection
+
+Follow these steps to execute the API tests locally.
+
+### 1. Import the Collection
+
+1. Open **Postman**
+2. Click **Import**
+3. Select the file:
+
+
+
+### 2. Configure Headers
+
+Ensure the following headers are present in requests:
+
+| Key | Value |
+|----|----|
+| Content-Type | application/json |
+| Authorization | Bearer testtoken123 |
+
+### 3. Run the Collection
+
+1. Open the imported collection
+2. Click **Run Collection**
+3. Execute all test cases
+
+The collection includes automated validations for:
+
+- Status code verification
+- Response body validation
+- Authentication scenarios
+- Error handling
+- Boundary conditions
+- Basic performance checks
