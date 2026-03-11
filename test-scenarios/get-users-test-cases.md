@@ -158,3 +158,42 @@ Verify that the API returns a 404 error when a non-existent user ID is requested
 **Database Validation (if accessible):**
 
 - No user record exists with the requested ID
+
+---
+
+### TC_API_GET_004 – Retrieve users when no users exist (empty list scenario)
+
+**Objective:**  
+Verify that the API returns an empty array when no users exist in the system.
+
+**Method:** GET  
+**Endpoint:** `/users`
+
+**Request Headers:**
+
+- Content-Type: application/json
+- Authorization: Bearer <valid_token>
+
+**Expected Status Code:** 200 OK
+
+**Expected Response Body (Example):**
+
+```json
+[]
+```
+
+**Response Validations:**
+
+- Status code is **200**
+- Response body is an **empty array**
+- No error message is returned
+- Response format remains valid JSON
+
+**Performance Validation:**
+
+- Response time < 2 seconds
+
+**Database Validation (if accessible):**
+
+- Users table contains **0 records**
+
