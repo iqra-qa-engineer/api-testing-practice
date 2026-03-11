@@ -110,3 +110,51 @@ Verify that the API returns correct user details when a valid user ID is provide
 **Database Validation (if accessible):**
 
 - User record exists in database for the provided ID
+
+---
+
+### TC_API_GET_003 – Retrieve user with invalid ID (404 scenario)
+
+**Objective:**  
+Verify that the API returns a 404 error when a non-existent user ID is requested.
+
+**Method:** GET  
+**Endpoint:** `/users/{id}`
+
+**Path Parameter Example:**
+
+```
+/users/99999
+```
+
+**Request Headers:**
+
+- Content-Type: application/json
+- Authorization: Bearer <valid_token>
+
+**Expected Status Code:** 404 Not Found
+
+**Expected Response Body (Example):**
+
+```json
+{
+  "error": "UserNotFound",
+  "message": "User with the specified ID does not exist",
+  "statusCode": 404
+}
+```
+
+**Response Validations:**
+
+- Status code is **404**
+- Response body contains `error` field
+- Error message clearly indicates user does not exist
+- No user data fields (`firstName`, `email`, etc.) are returned
+
+**Performance Validation:**
+
+- Response time < 2 seconds
+
+**Database Validation (if accessible):**
+
+- No user record exists with the requested ID
