@@ -197,3 +197,68 @@ Verify that the API returns an empty array when no users exist in the system.
 
 - Users table contains **0 records**
 
+---
+
+### TC_API_GET_005 – Retrieve users with pagination parameters
+
+**Objective:**  
+Verify that the API correctly returns paginated results when `page` and `limit` parameters are provided.
+
+**Method:** GET  
+**Endpoint:** `/users`
+
+**Query Parameters Example:**
+
+```
+/users?page=1&limit=10
+```
+
+**Request Headers:**
+
+- Content-Type: application/json
+- Authorization: Bearer <valid_token>
+
+**Expected Status Code:** 200 OK
+
+**Expected Response Body (Example):**
+
+```json
+{
+  "page": 1,
+  "limit": 10,
+  "totalUsers": 45,
+  "data": [
+    {
+      "id": "12345",
+      "firstName": "Iqra",
+      "lastName": "Ilyas",
+      "email": "iqra.ilyas@test.com"
+    }
+  ]
+}
+```
+
+**Response Validations:**
+
+- Status code is **200**
+- Response contains pagination fields:
+  - `page`
+  - `limit`
+  - `totalUsers`
+  - `data`
+- `data` field contains an **array of user objects**
+- Number of users returned does not exceed the `limit` value
+- Each user object contains:
+  - `id`
+  - `firstName`
+  - `lastName`
+  - `email`
+
+**Performance Validation:**
+
+- Response time < 2 seconds
+
+**Database Validation (if accessible):**
+
+- Returned users match the requested page range
+
